@@ -1,1 +1,105 @@
 /* Add your own styles */
+/* Reset & body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f3f6f9;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 2.7rem;
+    font-weight: bold;
+}
+
+/* Main container */
+main {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Input field */
+input[type="search"] {
+    width: 60%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+input[type="search"]:focus {
+    border-color: #3498db;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #16a085;
+}
+
+/* Result tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Table header */
+table thead, table th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 14px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* Table cells */
+table td {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+}
+
+/* Table body row effects */
+table tbody tr:nth-child(even) {
+    background-color: #f7f9fa;
+}
+
+table tbody tr:hover {
+    background-color: #e9f3ff;
+}
+
+/* Result container spacing */
+#result {
+    margin-top: 20px;
+    text-align: left; /* aligns table to the left for readability */
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1rem;
+}

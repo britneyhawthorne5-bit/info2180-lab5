@@ -4,11 +4,9 @@
         <meta charset="utf-8">
 		<title>World Database Lookup</title>
 
-		<!-- you can modify this as needed or to your preference -->
-		<link href="world.css" type="text/css" rel="stylesheet" />
+		<link href="./world.css" type="text/css" rel="stylesheet" />
 
-		<!-- you write this -->
-		<script src="world.js" type="text/javascript"></script>
+		<script src="./world.js" type="text/javascript"></script>
 	</head>
 
 	<body>
@@ -20,11 +18,16 @@
 			<div id="controls">
 				<label for="country">Country:</label>
 				<input id="country" type="search" name="country" placeholder="Enter country name" />
+
+				<!-- Existing button for country lookup -->
 				<button id="lookup">Lookup</button>
+
+				<!-- NEW button required in Exercise 4 -->
+				<button id="lookup-cities">Lookup Cities</button>
 			</div>
 			
 			<div id="result">
-				<!-- countries will appear here -->
+				<!-- AJAX results will appear here -->
 			</div>
 		</main>
 
