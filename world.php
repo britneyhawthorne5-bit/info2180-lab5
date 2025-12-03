@@ -6,23 +6,40 @@ $dbname = 'world';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
 
-// Get the GET variable (if it exists)
 $country = isset($_GET['country']) ? $_GET['country'] : "";
 
-// If a country was typed in, search for it
 if ($country !== "") {
     $stmt = $conn->prepare("SELECT * FROM countries WHERE name LIKE :country");
     $stmt->execute(['country' => "%$country%"]);
-} else {
-    // If no country was typed in, return all
+} 
+else {
     $stmt = $conn->query("SELECT * FROM countries");
 }
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<ul>
-<?php foreach ($results as $row): ?>
-  <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-<?php endforeach; ?>
-</ul>
 
+<?php if ($results): ?>
+<table border="1" cellspacing="0" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Continent</th>
+            <th>Independence</th>
+            <th>Head of State</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($results as $row): ?>
+            <tr>
+                <td><?= $row['name']; ?></td>
+                <td><?= $row['continent']; ?></td>
+                <td><?= $row['independence_year']; ?></td>
+                <td><?= $row['head_of_state']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+<?php else: ?>
+<p>No results found.</p>
+<?php endif; ?>
